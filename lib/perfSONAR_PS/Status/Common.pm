@@ -1,38 +1,39 @@
 package perfSONAR_PS::Status::Common;
 
-our $VERSION = 0.06;
-
 use strict;
 use warnings;
+
+our $VERSION = 0.08;
+
 use base 'Exporter';
 
 our @EXPORT = ('isValidOperState', 'isValidAdminState');
 
 my %valid_oper_states = (
-	up => '',
-	down => '',
-	degraded => '',
-	unknown => '',
-);
+        up => '',
+        down => '',
+        degraded => '',
+        unknown => '',
+        );
 
 my %valid_admin_states = (
-	normaloperation => '',
-	maintenance => '',
-	troubleshooting => '',
-	underrepair => '',
-	unknown => '',
-);
+        normaloperation => '',
+        maintenance => '',
+        troubleshooting => '',
+        underrepair => '',
+        unknown => '',
+        );
 
-sub isValidOperState($) {
-	my ($state) = @_;
-	return 1 if (defined $valid_oper_states{lc($state)});
-	return 0;
+sub isValidOperState {
+    my ($state) = @_;
+    return 1 if (defined $valid_oper_states{lc($state)});
+    return 0;
 }
 
-sub isValidAdminState($) {
-	my ($state) = @_;
-	return 1 if (defined $valid_admin_states{lc($state)});
-	return 0;
+sub isValidAdminState {
+    my ($state) = @_;
+    return 1 if (defined $valid_admin_states{lc($state)});
+    return 0;
 }
 
 1;
@@ -100,8 +101,9 @@ with this software.  If not, see <http://www.internet2.edu/membership/ip.html>
 
 =head1 COPYRIGHT
  
-Copyright (c) 2004-2007, Internet2 and the University of Delaware
+Copyright (c) 2004-2008, Internet2 and the University of Delaware
 
 All rights reserved.
 
 =cut
+# vim: expandtab shiftwidth=4 tabstop=4
